@@ -30,7 +30,7 @@ public class TokenIssuer {
                 .setSubject(email)
                 .setIssuer(uriInfo.getAbsolutePath().toString())
                 .setIssuedAt(new Date())
-                .setExpiration(Date.from(LocalDateTime.now().plusMinutes(5L).atZone(ZoneId.systemDefault()).toInstant()))
+                .setExpiration(Date.from(LocalDateTime.now().plusMinutes(15L).atZone(ZoneId.systemDefault()).toInstant()))
                 .signWith(signatureAlgorithm, signingKey)
                 .compact();
         return jwtToken;

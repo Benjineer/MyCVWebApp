@@ -11,12 +11,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import javax.json.JsonArray;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -53,26 +56,29 @@ public class Owner implements Serializable {
 
     private String otherAddress;
 
+    @Lob
     private String missionStatement;
 
     private String profilePixPath;
 
     private String linkedInLink;
 
-//    private List<String> skills;
-    @Lob
-    private JsonArray skills;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Award> awards;
 
     @OneToMany
+    private List<Skill> skills;
+
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Experience> experiences;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<School> schools;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Project> projects;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Referee> referees;
 
     public Owner() {
@@ -83,7 +89,8 @@ public class Owner implements Serializable {
         this.otherAddress = "";
         this.missionStatement = "";
         this.profilePixPath = "";
-        this.skills = null;
+        this.skills = new LinkedList<>();
+        this.awards = new LinkedList<>();
         this.experiences = new LinkedList<>();
         this.schools = new LinkedList<>();
         this.projects = new LinkedList<>();
@@ -174,11 +181,11 @@ public class Owner implements Serializable {
         this.profilePixPath = profilePixPath;
     }
 
-    public JsonArray getSkills() {
+    public List<Skill> getSkills() {
         return skills;
     }
 
-    public void setSkills(JsonArray skills) {
+    public void setSkills(List<Skill> skills) {
         this.skills = skills;
     }
 
@@ -241,8 +248,14 @@ public class Owner implements Serializable {
     public void setLinkedInLink(String linkedInLink) {
         this.linkedInLink = linkedInLink;
     }
-    
-    
+
+    public List<Award> getAwards() {
+        return awards;
+    }
+
+    public void setAwards(List<Award> awards) {
+        this.awards = awards;
+    }
 
     @Override
     public int hashCode() {
@@ -266,6 +279,7 @@ public class Owner implements Serializable {
         hash = 61 * hash + Objects.hashCode(this.projects);
         hash = 61 * hash + Objects.hashCode(this.referees);
         hash = 61 * hash + Objects.hashCode(this.linkedInLink);
+        hash = 61 * hash + Objects.hashCode(this.awards);
         return hash;
     }
 
@@ -338,14 +352,15 @@ public class Owner implements Serializable {
         if (!Objects.equals(this.linkedInLink, other.linkedInLink)) {
             return false;
         }
+        if (!Objects.equals(this.awards, other.awards)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Owner{" + "surname=" + surname + ", firstname=" + firstname + ", othername=" + othername + ", email=" + email + ", phoneNo=" + phoneNo + ", homeAddress=" + homeAddress + ", lagosAddress=" + lagosAddress + ", otherAddress=" + otherAddress + ", missionStatement=" + missionStatement + ", profilePixPath=" + profilePixPath + ", linkedInLink=" + linkedInLink + '}';
+        return "{" + "surname:" + surname + ", firstname:" + firstname + ", othername:" + othername + ", email:" + email + ", phoneNo:" + phoneNo + ", homeAddress:" + homeAddress + ", lagosAddress:" + lagosAddress + ", otherAddress:" + otherAddress + ", missionStatement:" + missionStatement + ", profilePixPath:" + profilePixPath + ", linkedInLink:" + linkedInLink + '}';
     }
-
-    
 
 }

@@ -61,8 +61,7 @@ public class JwtAuthenticationFilter implements ContainerRequestFilter {
         } catch (MalformedJwtException | SignatureException | UnsupportedJwtException | IllegalArgumentException e) {
             requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).build());
         } catch (ExpiredJwtException expiredJE) {
-            requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED)
-                    .entity("Please Login to refresh your token and continue your operations").build());
+            requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).build());
         }
 
     }

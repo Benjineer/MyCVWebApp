@@ -1,0 +1,145 @@
+<!--
+        Author: W3layouts
+        Author URL: http://w3layouts.com
+        License: Creative Commons Attribution 3.0 Unported
+        License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html ng-app="UpdateApp">
+
+    <!-- Head -->
+    <head>
+
+        <title>MyCV App</title>
+
+        <!-- For-Mobile-Apps -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="Simple Contact Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <!-- //For-Mobile-Apps -->
+
+        <!-- Style --> <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+        <!-- Web-Fonts -->
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" 	type="text/css"  media="all">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,500,600,700,800" 		type="text/css"  media="all">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <!-- //Web-Fonts -->
+
+    </head>
+    <!-- //Head -->
+
+    <!-- Body -->
+    <body>
+        <div ng-controller="Controller">
+            <h1>Profile</h1>
+            <div id="triangle"></div>
+            <div class="container">
+                <div class="contact">
+                    <form ng-submit="updateProfile()">
+                        <label>Surname</label>
+                        <input type="text" Name="Surname" placeholder="Surname" ng-model="owner.surname">
+                        <label>Firstname</label>
+                        <input type="text" Name="First Name" placeholder="Firstname" ng-model="owner.firstname">
+                        <label>Othername</label>
+                        <input type="text" Name="Other Name" placeholder="Othername" ng-model="owner.othername">
+                        <label>Phone Number</label>
+                        <input type="text" Name="Phone Number" placeholder="Phone Number" ng-model="owner.phoneNo">
+                        <label>Home Address</label>
+                        <input type="text" Name="Home Address" placeholder="Home Address" ng-model="owner.homeAddress">
+                        <label>LinkedInLink</label>
+                        <input type="text" Name="LinkedInLink" placeholder="LinkedInlink" ng-model="owner.linkedInLink">
+                        <label>Objectives</label>
+                        <textarea name="Objectives" placeholder="Objectives" ng-model="owner.objectives"></textarea>
+                        <label>Skills</label>
+                        <input type="text" name="newSkill" placeholder="Skills" ng-model="newSkill"/>
+                        <div class="add-button">
+                            <input type="button" ng-disabled="skillsFrm.$invalid" ng-click="addToList(owner.skills, newSkill)" value="Add"/>
+                        </div>
+                        <ul id="menu">
+                            <li ng-repeat="skill in owner.skills" class="{'fadeOut' : skill.done}">
+                                <span class="fa fa-close" ng-click="deleteFromList(owner.skills, $index)"></span>
+                                <span>{{skill}}</span>
+                            </li>
+                        </ul>
+                        <br>
+                        <label>Awards</label>
+                        <input type="text" name="newAward" placeholder="Awards" ng-model="newAward"/>
+                        <div class="add-button">
+                            <input type="button" ng-disabled="awardsFrm.$invalid" ng-click="addToList(owner.awards, newAward)" value="Add"/>
+                        </div>
+                        <ul id="menu">
+                            <li ng-repeat="award in owner.awards" class="{'fadeOut' : award.done}">
+                                <span class="fa fa-close" ng-click="deleteFromList(owner.awards, $index)"></span>
+                                <span>{{award}}</span>
+                            </li>
+                        </ul>
+                        <br>
+                        <div class="send-button">
+                            <input type="submit" value="Update">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="footer">
+                <p> &copy; 2016 Simple Contact Form. All Rights Reserved | Design by <a href="http://w3layouts.com" target="=_blank">W3layouts</a></p>
+            </div>
+        </div>
+        <script>
+            angular.module('UpdateApp', []).controller('Controller', function ($scope, $http, $window) {
+                $scope.owner = {};
+                $scope.owner.skills = [];
+                $scope.owner.awards = [];
+                $scope.addToList = function (array, value) {
+                    if (value.length > 0 || value !== null) {
+                        array.push(value);
+                        value = '';
+                    }
+
+                };
+                $scope.deleteFromList = function (array, index) {
+                    console.log("deleting skill");
+                    array.splice(index, 1);
+                };
+                $scope.updateProfile = function () {
+                    var token = $window.sessionStorage.getItem('token');
+                    console.log(token);
+//                var token = $window.localStorage['jwt'];
+                    var config = {
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': token
+                        }
+                    };
+                    var data = $scope.owner;
+                    angular.forEach(data, function (value, key) {
+                        if (value === "" || value === null) {
+                            delete data[key];
+                        }
+                    });
+                    console.log(data);
+                    $http.put("http://localhost:8089/MyCV/v1/owner", data, config)
+                            .then(function successCallback(response) {
+                                console.log(response);
+                                window.alert("Profile Successfully updated");
+                            }, function errorCallback(response) {
+                                console.log(response);
+                                if (response.status === 401) {
+                                    window.alert("Expired Token, Please login to refresh token");
+                                    $window.location.href = '/MyCV/login/login.html';
+                                }
+                                // called asynchronously if an error occurs
+                                // or server returns response with an error status.
+                            });
+                };
+            });
+        </script>
+    </body>
+    <!-- //Body -->
+
+</html>

@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html ng-app="MyCVApp">
     <head>
-        <title>My Resume a Personal Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+        <title>MyCv App</title>
         <!--mobile apps-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -22,7 +22,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!--//Custom Theme files-->
         <!--js-->
         <script src="js/jquery-1.11.1.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
         <!-- //js -->
         <!--web-fonts-->
@@ -51,39 +50,40 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div class="col-md-4 header-left">
                             <img src="images/img3.JPG" alt=""/>
                         </div>
+
                         <div class="col-md-8 header-right">
                             <h2>Hello</h2>
-                            <h1>I'm {{surname + ", " +firstname+" "+othername}}</h1>
+                            <h1>I'm {{data.surname + ", " + data.firstname + " " + data.othername}}</h1>
                             <h6>Web Designer and Developer</h6>
                             <ul class="address">
-                                <li>
-                                    <ul class="address-text">
-                                        <li><b>D.O.B</b></li>
-                                        <li>23-06-1980</li>
-                                    </ul>
-                                </li>
+                                <!--                                <li>
+                                                                    <ul class="address-text">
+                                                                        <li><b>D.O.B</b></li>
+                                                                        <li>23-06-1980</li>
+                                                                    </ul>
+                                                                </li>-->
                                 <li>
                                     <ul class="address-text">
                                         <li><b>PHONENO </b></li>
-                                        <li>{{phoneNo}}</li>
+                                        <li>{{data.phoneNo}}</li>
                                     </ul>
                                 </li>
                                 <li>
                                     <ul class="address-text">
                                         <li><b>ADDRESS </b></li>
-                                        <li>{{homeAddress}}</li>
+                                        <li>{{data.homeAddress}}</li>
                                     </ul>
                                 </li>
                                 <li>
                                     <ul class="address-text">
                                         <li><b>E-MAIL </b></li>
-                                        <li><a href="mailto:oke3ben@gmail.com"> {{email}}</a></li>
+                                        <li><a href="mailto:oke3ben@gmail.com"> {{data.email}}</a></li>
                                     </ul>
                                 </li>
                                 <li>
                                     <ul class="address-text">
                                         <li><b>WEBSITE </b></li>
-                                        <li><a href="http://w3layouts.com">www.myresume.com</a></li>
+                                        <li><a href="ng.linkedin.com/in/okeniyi">{{data.linkedInLink}}</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -111,6 +111,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <li><a href="#skills" class="scroll">Skills</a></li>
                                 <li><a href="#projects" class="scroll">My Projects</a></li>
                                 <li><a href="#contact" class="scroll">Contact</a></li>
+                                <li><a href="login/login.html">Login</a></li>
                             </ul>
                             <div class="clearfix"> </div>
                         </div>
@@ -123,18 +124,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="container">
                     <h3 class="title"> About Me</h3>
                     <div class="col-md-8 about-left">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet sem sit amet dolor luctus pellentesque. Pellentesque eleifend tellus at interdum elementum. Nam egestas molestie elit. Vivamus sed accumsan quam, a mollis magna. Nam aliquet eros eget sapien consequat tincidunt at vel nibh. Duis ut turpis mi. Duis nec scelerisque urna, sit amet varius arcu. Aliquam aliquet sapien quis mauris semper suscipit. Maecenas pharetra dapibus posuere. Praesent odio sem, varius quis dolor vel, maximus dapibus mi. Pellentesque mattis mauris neque. Nam aliquam turpis ante, at cursus massa ullamcorper ut. Proin id diam id nisi sagittis pellentesque sed sit amet eros.  
-                            In porttitor tempus nulla, a porta purus commodo sed. Praesent hendrerit nisi nunc, ut porttitor justo pellentesque et ac gravida sem mattis. Donec ornare justo nec</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet sem sit amet dolor luctus pellentesque Nam egestas molestie elit. Vivamus sed accumsan quam, a mollis magna. Nam aliquet eros eget sapien consequat</p>
+                        <p>I seek to work in environment with a culture of teamwork and fairness where my strong analytical and problem solved skills can be channeled to the growth of an empire.<br>
+                            I have experience in building RESTful APIs for Web Apps using Java EE & MySQL DB , Desktop Apps with JavaFx and Android Apps.<br>
+                            I am also committed to developing a career as a software developer leveraging on previous experiences and my penchant for learning better coding techniques daily.</p>
+                        <a class="twitter-timeline" data-width="700" data-height="300" href="https://twitter.com/BBenjineer">Tweets by BBenjineer</a>
+                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div>
                     <div class="col-md-4 about-right">
                         <ul>
                             <h5>Awards</h5>
-                            <li><span class="glyphicon glyphicon-menu-right"></span> Lorem ipsum dolor sit amet cingelit</li>
-                            <li><span class="glyphicon glyphicon-menu-right"></span> Curabitur id metus rutrum convallis</li>
-                            <li><span class="glyphicon glyphicon-menu-right"></span> Morbi dictum velit vitae porttitor</li>
-                            <li><span class="glyphicon glyphicon-menu-right"></span> Fusce at metus id justo ullamcorper</li>
-                            <li><span class="glyphicon glyphicon-menu-right"></span> Aliquam ac nisl id justo malesuada </li>
+                            <li><span class="glyphicon glyphicon-menu-right"></span> Letter of Commendation, from the dept. of Electronic & Electrical Engineering, OAU, Ile-Ife for volunteering as Recitation Instructor – 2015.</li>
+                            <li><span class="glyphicon glyphicon-menu-right"></span> 2nd placed Team Schlumberger’s Ocean’s software competition, Nigeria - 2014</li>
+                            <li><span class="glyphicon glyphicon-menu-right"></span> Winning Team, TAHMO West Africa weather sensor design competition - 2014</li>
+                            <li><span class="glyphicon glyphicon-menu-right"></span> Winning Team, TAHMO Africa weather sensor design competition -  2013</li>
+                            <li><span class="glyphicon glyphicon-menu-right"></span> First place, National Mathematics Olympiad, Kogi state.  - 2007/2008 </li>
                         </ul>
                         <div class="clearfix"> </div>
                     </div>
@@ -148,41 +151,46 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <h3 class="title">Work Experience</h3>
                     <div class="work-info"> 
                         <div class="col-md-6 work-left"> 
-                            <h4>2014 - 2016 </h4>
+                            <h4>May 2016 - Present</h4>
                         </div>
                         <div class="col-md-6 work-right"> 
-                            <h5><span class="glyphicon glyphicon-briefcase"> </span> Company Name</h5>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
+                            <h5><span class="glyphicon glyphicon-briefcase"> </span> DATAINFOSEC CONSULT LTD.</h5>
+                            <p>As PROGRAMMER/TECHNICAL SUPPORT</p>
+                            <p>Proficient use of Microsoft Excel to process, audit and format payrolls.
+                                Bulk Data Processing with Java, MYSQL and other technologies.
+                                General Technical Support for Laptops & Desktops, Windows OS and LANs.
+                            </p>
                         </div>
                         <div class="clearfix"> </div>
                     </div>
                     <div class="work-info"> 
                         <div class="col-md-6 work-right work-right2"> 
-                            <h4>2013 - 2014 </h4>
+                            <h4>September 2015 – September 2016 </h4>
                         </div>
                         <div class="col-md-6 work-left work-left2"> 
-                            <h5> Company Name <span class="glyphicon glyphicon-briefcase"> </span></h5>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
+                            <h5> UREGISTA INC. <span class="glyphicon glyphicon-briefcase"> </span></h5>
+                            <p>As JAVA DEVELOPER</p>
+                            <p>Back end Programming for URegista product using Java SE & EE, MySQL Database.</p>
                         </div>
                         <div class="clearfix"> </div>
                     </div>
                     <div class="work-info"> 
                         <div class="col-md-6 work-left"> 
-                            <h4>2012 - 2013 </h4>
+                            <h4>July 2015 – August 2015</h4>
                         </div>
                         <div class="col-md-6 work-right"> 
-                            <h5><span class="glyphicon glyphicon-briefcase"> </span> Company Name</h5>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
+                            <h5><span class="glyphicon glyphicon-briefcase"> </span> EXAMETRY LTD</h5>
+                            <p>Research solutions to math’s and physics questions and use of Microsoft word to create illustrative diagrams.</p>
                         </div>
                         <div class="clearfix"> </div>
                     </div>
                     <div class="work-info"> 
                         <div class="col-md-6 work-right work-right2"> 
-                            <h4>2010 - 2012 </h4>
+                            <h4>August 2013 – February 2014 </h4>
                         </div>
                         <div class="col-md-6 work-left work-left2"> 
-                            <h5> Company Name <span class="glyphicon glyphicon-briefcase"></span> </h5>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
+                            <h5> PHASE 3 TELECOM <span class="glyphicon glyphicon-briefcase"></span> </h5>
+                            <p>Monitoring of fibre optic cable network, Field maintenance and repair of fibre optic cable and documentation of faults and general office paper work.</p>
                         </div>
                         <div class="clearfix"> </div>
                     </div>
@@ -195,31 +203,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <h3 class="title">Education</h3>
                     <div class="work-info"> 
                         <div class="col-md-6 work-left"> 
-                            <h4>Master Degree - 2010</h4>
+                            <h4>BSC. ELECTRONIC & ELECTRICAL ENGINEERING - 2015</h4>
                         </div>
                         <div class="col-md-6 work-right"> 
-                            <h5><span class="glyphicon glyphicon-education"> </span> University Name</h5>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
+                            <h5><span class="glyphicon glyphicon-education"> </span> OBAFEMI AWOLOWO UNIVERSITY</h5>
+                            <p>Ile-Ife, Osun state, Nigeria</p>    
+                            <P>Graduated with 1st Class Honours</p>    
+                            <p>2nd placed Team Schlumberger’s Ocean’s software competition, Nigeria - 2014
+                                Winning Team, TAHMO Africa weather sensor design competition -  2013
+                                Winning Team, TAHMO West Africa weather sensor design competition - 2014
+                                Letter of Commendation, from the dept. of Electronic & Electrical Engineering, OAU, Ile-Ife for volunteering as Recitation Instructor – 2015.
+                            </p>
                         </div>
                         <div class="clearfix"> </div>
                     </div>
                     <div class="work-info"> 
                         <div class="col-md-6 work-right work-right2"> 
-                            <h4>Diploma in Design - 2010</h4>
+                            <h4>WASSC- 2009</h4>
                         </div>
                         <div class="col-md-6 work-left work-left2"> 
-                            <h5> University Name <span class="glyphicon glyphicon-education"></span></h5>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="work-info"> 
-                        <div class="col-md-6 work-left"> 
-                            <h4>Web Design - 2008</h4>
-                        </div>
-                        <div class="col-md-6 work-right"> 
-                            <h5><span class="glyphicon glyphicon-education"> </span> University Name</h5>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo </p>
+                            <h5>STAFF COMPREHENSIVE SEC SCHOOL <span class="glyphicon glyphicon-education"></span></h5>
+                            <p>Ajaokuta, Kogi State, Nigeria</p>
+                            <p>First place, National Mathematics Olympiad, Kogi state – 2007/2008</p>
                         </div>
                         <div class="clearfix"> </div>
                     </div>
@@ -232,46 +237,56 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <h3 class="title">Skills</h3>
                     <div class="skills-info">
                         <div class="col-md-6 bar-grids">
-                            <h6>WEB DESIGN  <span> 80% </span></h6>
+                            <h6>JAVA EE RESTFUL APIS FOR WEB <span> 98% </span></h6>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-striped active" style="width: 80%">
+                                <div class="progress-bar progress-bar-striped active" style="width: 98%">
                                 </div>
                             </div>
-                            <h6>UI DESIGN & DEVELOPER <span> 70% </span></h6>
+                            <h6>ANGULAR JS  <span> 70% </span></h6>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped active" style="width: 70%">
                                 </div>
                             </div>
-                            <h6>HTML/CSS<span>90% </span></h6>
+                            <h6>HTML/CSS<span>50% </span></h6>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-striped active" style="width: 90%">
+                                <div class="progress-bar progress-bar-striped active" style="width: 50%">
                                 </div>
                             </div>
-                            <h6>PHOTOSHOP <span> 75% </span></h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped active" style="width: 75%">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 bar-grids">
-                            <h6>PROJECT MANAGEMENT <span> 85% </span></h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped active" style="width: 85%">
-                                </div>
-                            </div>
-                            <h6>SOCIAL MEDIA MARKETING<span> 95% </span></h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped active" style="width: 95%">
-                                </div>
-                            </div>
-                            <h6>UX DEVELOPER<span>80% </span></h6>
+                            <h6>MYSQL <span> 80% </span></h6>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped active" style="width: 80%">
                                 </div>
                             </div>
-                            <h6>PHP DESIGN<span> 60% </span></h6>
+                            <h6>JAVAFX FOR DESKTOP <span> 70% </span></h6>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-striped active" style="width: 60%">
+                                <div class="progress-bar progress-bar-striped active" style="width: 70%">
+                                </div>
+                            </div>
+                            <h6>NATIVE ANDROID FOR MOBILE APPS <span> 70% </span></h6>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" style="width: 70%">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 bar-grids">
+                            <h6>MICROSOFT EXCEL <span> 80% </span></h6>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" style="width: 80%">
+                                </div>
+                            </div>
+                            <h6>EMBEDDED SYSTEMS (ARDUINO)<span> 75% </span></h6>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" style="width: 75%">
+                                </div>
+                            </div>
+                            <h6>VHDL FOR FPGA<span>40% </span></h6>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" style="width: 40%">
+                                </div>
+                            </div>
+                            <h6>INVENTIVE, SPEEDY LEARNER & TEAM PLAYER.<span> 90% </span></h6>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" style="width: 90%">
                                 </div>
                             </div>
                         </div>
@@ -288,9 +303,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
                             <ul class="resp-tabs-list wow fadeInUp animated" data-wow-delay=".7s">
                                 <li class="resp-tab-item"><span>All</span></li>
-                                <li class="resp-tab-item"><span>Html</span></li>
-                                <li class="resp-tab-item"><span> Photoshop</span></li>
-                                <li class="resp-tab-item"><span>Wordpress</span></li>					
+<!--                                <li class="resp-tab-item"><span>Websites</span></li>
+                                <li class="resp-tab-item"><span>Android</span></li>
+                                <li class="resp-tab-item"><span>Desktop</span></li>					-->
                             </ul>	
                             <div class="clearfix"> </div>	
                             <div class="resp-tabs-container">
@@ -298,99 +313,99 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <div class="tab_img">
                                         <div class="col-md-4 portfolio-grids">
                                             <div class="grid">
-                                                <a href="images/g1.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                                                    <img src="images/g1.jpg" alt="" class="img-responsive" />
+                                                <a href="images/Splash Screen.PNG" class="swipebox" >
+                                                    <img src="images/Splash Screen.PNG" alt="" class="img-responsive" />
                                                     <div class="figcaption">
-                                                        <h3>My<span> Project</span></h3>
-                                                        <p>Sarah likes to watch clouds. She's quite depressed.</p>
+                                                        <h3>Easy<span> Cash</span></h3>
+                                                        <p>Android App Splash Screen Page</p>
                                                     </div>
                                                 </a>	
                                             </div>
                                         </div>
                                         <div class="col-md-4 portfolio-grids">
                                             <div class="grid effect-sarah">
-                                                <a href="images/g2.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                                                    <img src="images/g2.jpg" alt="" class="img-responsive" />
+                                                <a href="images/MyCVFrontpage.PNG" class="swipebox" >
+                                                    <img src="images/MyCVFrontpage.PNG" alt="" class="img-responsive" />
                                                     <div class="figcaption">
-                                                        <h3>My<span> Project</span></h3>
-                                                        <p>Sarah likes to watch clouds. She's quite depressed.</p>
+                                                        <h3>MyCv<span>Website</span></h3>
+                                                        <p>Front page of a website about myself show casing my works</p>
                                                     </div>
                                                 </a>	
                                             </div>
                                         </div>
                                         <div class="col-md-4 portfolio-grids">
                                             <div class="grid">
-                                                <a href="images/g3.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                                                    <img src="images/g3.jpg" alt="" class="img-responsive" />
+                                                <a href="images/loginpage.PNG" class="swipebox" >
+                                                    <img src="images/loginpage.PNG" alt="" class="img-responsive" />
                                                     <div class="figcaption">
-                                                        <h3>My<span> Project</span></h3>
-                                                        <p>Sarah likes to watch clouds. She's quite depressed.</p>
+                                                        <h3>Easy<span> Cash</span></h3>
+                                                        <p>Android App Splash Login Page</p>
                                                     </div>
                                                 </a>	
                                             </div>
                                         </div>
                                         <div class="col-md-4 portfolio-grids">
                                             <div class="grid">
-                                                <a href="images/g4.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                                                    <img src="images/g4.jpg" alt="" class="img-responsive" />
+                                                <a href="images/mycvaboutme.PNG" class="swipebox" >
+                                                    <img src="images/mycvaboutme.PNG" alt="" class="img-responsive" />
                                                     <div class="figcaption">
-                                                        <h3>My<span> Project</span></h3>
-                                                        <p>Sarah likes to watch clouds. She's quite depressed.</p>
+                                                        <h3>MyCV<span> Website</span></h3>
+                                                        <p>About me section of a website about myself show casing my works</p>
                                                     </div>
                                                 </a>	
                                             </div>
                                         </div>
                                         <div class="col-md-4 portfolio-grids">
                                             <div class="grid">
-                                                <a href="images/g5.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                                                    <img src="images/g5.jpg" alt="" class="img-responsive" />
+                                                <a href="images/uregistawelcomepage.PNG" class="swipebox" >
+                                                    <img src="images/uregistawelcomepage.PNG" alt="" class="img-responsive" />
                                                     <div class="figcaption">
-                                                        <h3>My<span> Project</span></h3>
-                                                        <p>Sarah likes to watch clouds. She's quite depressed.</p>
+                                                        <h3>URegista<span> Project</span></h3>
+                                                        <p>Welcome page of an online form builder</p>
                                                     </div>
                                                 </a>	
                                             </div>
                                         </div>
                                         <div class="col-md-4 portfolio-grids">
                                             <div class="grid">
-                                                <a href="images/g6.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                                                    <img src="images/g6.jpg" alt="" class="img-responsive" />
+                                                <a href="images/uregistaloginpage.PNG" class="swipebox" >
+                                                    <img src="images/uregistaloginpage.PNG" alt="" class="img-responsive" />
                                                     <div class="figcaption">
-                                                        <h3>My<span> Project</span></h3>
-                                                        <p>Sarah likes to watch clouds. She's quite depressed.</p>
+                                                        <h3>URegista<span> Project</span></h3>
+                                                        <p>Login Page of an Online form Builder</p>
                                                     </div>
                                                 </a>	
                                             </div>
                                         </div>
                                         <div class="col-md-4 portfolio-grids">
                                             <div class="grid">
-                                                <a href="images/g7.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                                                    <img src="images/g7.jpg" alt="" class="img-responsive" />
+                                                <a href="images/uregistafrontpage.PNG" class="swipebox" >
+                                                    <img src="images/uregistafrontpage.PNG.jpg" alt="" class="img-responsive" />
                                                     <div class="figcaption">
-                                                        <h3>My<span> Project</span></h3>
-                                                        <p>Sarah likes to watch clouds. She's quite depressed.</p>
+                                                        <h3>URegista<span> Project</span></h3>
+                                                        <p>Another section of the front page of an online form </p>
                                                     </div>
                                                 </a>	
                                             </div>
                                         </div>
                                         <div class="col-md-4 portfolio-grids">
                                             <div class="grid">
-                                                <a href="images/g8.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                                                    <img src="images/g8.jpg" alt="" class="img-responsive" />
+                                                <a href="images/mycvworkexp.PNG" class="swipebox" >
+                                                    <img src="images/mycvworkexp.PNG" alt="" class="img-responsive" />
                                                     <div class="figcaption">
-                                                        <h3>My<span> Project</span></h3>
-                                                        <p>Sarah likes to watch clouds. She's quite depressed.</p>
+                                                        <h3>MyCV<span>Website</span></h3>
+                                                        <p>Work experience section</p>
                                                     </div>
                                                 </a>	
                                             </div>
                                         </div>
                                         <div class="col-md-4 portfolio-grids">
                                             <div class="grid">
-                                                <a href="images/g9.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
-                                                    <img src="images/g9.jpg" alt="" class="img-responsive" />
+                                                <a href="images/registrationpage.PNG" class="swipebox" >
+                                                    <img src="images/registrationpage.PNG" alt="" class="img-responsive" />
                                                     <div class="figcaption">
-                                                        <h3>My<span> Project</span></h3>
-                                                        <p>Sarah likes to watch clouds. She's quite depressed.</p>
+                                                        <h3>Easy<span> Cash</span></h3>
+                                                        <p>Registration Page of Android app</p>
                                                     </div>
                                                 </a>	
                                             </div>
@@ -402,7 +417,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <div class="tab_img">
                                         <div class="col-md-4 portfolio-grids">
                                             <div class="grid">
-                                                <a href="images/g5.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
+                                                <a href="images/g5.jpg" class="swipebox" >
                                                     <img src="images/g5.jpg" alt="" class="img-responsive" />
                                                     <div class="figcaption">
                                                         <h3>My<span> Project</span></h3>
@@ -413,7 +428,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </div>
                                         <div class="col-md-4 portfolio-grids">
                                             <div class="grid">
-                                                <a href="images/g6.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
+                                                <a href="images/g6.jpg" class="swipebox" >
                                                     <img src="images/g6.jpg" alt="" class="img-responsive" />
                                                     <div class="figcaption">
                                                         <h3>My<span> Project</span></h3>
@@ -518,58 +533,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <!--ResponsiveTabs-->
                     <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
                     <script type="text/javascript">
-            $(document).ready(function () {
-                $('#horizontalTab').easyResponsiveTabs({
-                    type: 'default', //Types: default, vertical, accordion           
-                    width: 'auto', //auto or any width like 600px
-                    fit: true   // 100% fit in a container
-                });
-            });
+                                            $(document).ready(function () {
+                                                $('#horizontalTab').easyResponsiveTabs({
+                                                    type: 'default', //Types: default, vertical, accordion           
+                                                    width: 'auto', //auto or any width like 600px
+                                                    fit: true   // 100% fit in a container
+                                                });
+                                            });
                     </script>
                     <!--//ResponsiveTabs-->
                     <!-- swipe box js -->
                     <script src="js/jquery.swipebox.min.js"></script> 
                     <script type="text/javascript">
-            jQuery(function ($) {
-                $(".swipebox").swipebox();
-            });
+                                            jQuery(function ($) {
+                                                $(".swipebox").swipebox();
+                                            });
                     </script>
                     <!-- //swipe box js -->
                 </div>
             </div>
             <!--//portfolio-->
-            <!--contact -->
-            <div class="welcome contact" id="contact">
-                <div class="container">
-                    <h3 class="title">Contact Us</h3>
-                    <div class="contact-row">
-                        <div class="col-md-6 contact-left">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d250261.21285550427!2d-60.42919264432581!3d46.13039392716506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b67ef033cc4082f%3A0xbf0517bb7d9ecd34!2sNorth+Sydney%2C+NS%2C+Canada!5e0!3m2!1sen!2sin!4v1460613320469"></iframe>
-                        </div>
-                        <div class="col-md-6 contact-right">
-                            <div class="address-left">
-                                <p>756 global Place, North Sydney,<br> FA-2305,Canada </p>
-                            </div>
-                            <div class="address-right">
-                                <p>Call us :  +00 111 222 3333</p>
-                                <p>E-mail : <a href="mailto:info@example.com">mail@example.com</a></p>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="contact-form">
-                                <form action="#" method="post">
-                                    <input type="text" name="Name" placeholder="Name" required="">
-                                    <input class="email" name="Email" type="text" placeholder="Email" required="">
-                                    <input class="phone" name="phone" type="text" placeholder="Phone" required="">
-                                    <textarea name="Message" placeholder="Message" required=""></textarea>
-                                    <input type="submit" value="SUBMIT" >
-                                </form>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
-            <!--//contact -->
             <!--footer-->
             <div class="footer">
                 <div class="container">
@@ -593,45 +576,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </script>
         <script>
             angular.module('MyCVApp', []).controller('Controller', function ($scope, $http, $window) {
-                var getAuth = function () {
-                    $http.post("http://localhost:8089/MyCV/v1/user/auth?email=oke3ben@gmail.com&password=remember")
-                            .then(function successCallback(response) {
-                                var jwt = response.headers('Authorization');
-                                console.log(response);
-                                console.log(jwt);
-                                $window.sessionStorage.setItem('token', jwt);
-//                                $window.localStorage['jwt'] = jwt;
-//                                $localStorage.token = jwt;
-                            }, function errorCallback(response) {
-                                console.log(response);
-                                // called asynchronously if an error occurs
-                                // or server returns response with an error status.
-                            });
-                };
-                getAuth();
-                var token = $window.sessionStorage.getItem('token');
-//                var token = $window.localStorage['jwt'];
-                var config = {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': token
-                    }
-                };
-//                console.log(jwt);
                 var fetchProfile = function () {
-                    $http.get("http://localhost:8089/MyCV/v1/owner/profile", config)
-                            .then(function (response) {
-                                //                                $window.location.href = 'http://localhost:8089/SabiRoad/login.html';
+                    $http.get("http://localhost:8089/MyCV/v1/owner")
+                            .then(function successCallback(response) {
+//                                $window.location.href = 'http://localhost:8089/SabiRoad/login.html';
                                 console.log(response);
+                                $scope.data = response.data;
                                 $scope.surname = response.data.surname;
                                 $scope.firstname = response.data.firstname;
                                 $scope.othername = response.data.othername;
                                 $scope.email = response.data.email;
                                 $scope.phoneNo = response.data.phoneNo;
                                 $scope.homeAddress = response.data.homeAddress;
-                            }, function (response) {
-                                
+                            }, function errorCallback(response) {
                                 console.log(response);
+                                window.alert("Chai! Something went wrong");
                             });
                 };
                 fetchProfile();

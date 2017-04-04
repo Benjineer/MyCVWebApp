@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Objects;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.json.Json;
 import javax.json.JsonObject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -19,7 +18,6 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
 import javax.ws.rs.core.MediaType;
@@ -72,13 +70,21 @@ public class CreateAndAuthAPI {
 
     @Path("auth")
     @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response authenticate(@QueryParam("email") String email, @QueryParam("password") String password) {
+    public Response authenticate(JsonObject loginJson) {
 
-        if (Objects.isNull(email) || Objects.isNull(password)) {
+        if (Objects.isNull(loginJson) || loginJson.isEmpty()) {
             return Response.status(Response.Status.NOT_ACCEPTABLE).entity("Invalid Param values").build();
 
         }
+
+        if (!loginJson.containsKey("email") || !loginJson.containsKey("password")) {
+            return Response.status(Response.Status.NOT_ACCEPTABLE).entity("Invalid Param values").build();
+
+        }
+        String email = loginJson.getString("email");
+        String password = loginJson.getString("password");
 
         List<Owner> resultList = em.createQuery("SELECT o FROM Owner o WHERE o.email=:email", Owner.class
         )

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="LoginApp">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>MyCV App</title>
+
+        <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    </head>
+
+    <body>
+        <div ng-controller="Controller">
+            <span class="button" id="toggle-login">{{message}}</span>
+
+            <div id="login">
+                <div id="triangle"></div>
+                <h1>Log in</h1>
+                <form ng-submit="getAuth()">
+                    <input type="email" name="username" placeholder="Username" ng-model="credentials.email" required=""/>
+                    <input type="password" name="password" placeholder="Password" ng-model="credentials.password" required=""/>
+                    <input type="submit" value="Log in"/>
+                </form>
+            </div>
+
+        </div>
+
+        <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+        <script src="js/index.js"></script>
+        <script>
+                        angular.module('LoginApp', []).controller('Controller', function ($scope, $http, $window, $timeout) {
+                            $scope.credentials;
+                            $scope.message = "Log in";
+
+                            $scope.getAuth = function () {
+                                var data = $scope.credentials;
+                                $http.post("http://localhost:8089/MyCV/v1/user/auth", data)
+                                        .then(function successCallback(response) {
+//                                            window.alert("Login Successful");
+                                            $scope.message = "Login Successful";
+                                            var jwt = response.headers('Authorization');
+                                            console.log(jwt);
+                                            $window.sessionStorage.setItem('token', jwt);
+                                            $timeout(function () {
+                                                $window.location.href = '/MyCV/profile/profile.html';
+                                            }, 1000);
+//                                            $window.location.href = 'http://localhost:8089/MyCV/profile/profile.html';
+//                                $window.localStorage['jwt'] = jwt;
+//                                $localStorage.token = jwt;
+                                        }, function errorCallback(response) {
+                                            $scope.message = "Invalid Username or Password";
+                                            console.log(response);
+                                            // called asynchronously if an error occurs
+                                            // or server returns response with an error status.
+                                        });
+                            };
+                        });
+        </script>
+
+    </body>
+
+</html>
