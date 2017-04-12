@@ -36,7 +36,7 @@
 
                             $scope.getAuth = function () {
                                 var data = $scope.credentials;
-                                $http.post("http://localhost:8089/MyCV/v1/user/auth", data)
+                                $http.post("http://34.206.64.30:8080/MyCV/v1/user/auth", data)
                                         .then(function successCallback(response) {
 //                                            window.alert("Login Successful");
                                             $scope.message = "Login Successful";

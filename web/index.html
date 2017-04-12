@@ -21,6 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <link rel="stylesheet" href="css/swipebox.css">
         <!--//Custom Theme files-->
         <!--js-->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
         <script src="js/jquery-1.11.1.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
         <!-- //js -->
@@ -82,7 +83,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </li>
                                 <li>
                                     <ul class="address-text">
-                                        <li><b>WEBSITE </b></li>
+                                        <li><b>LINKEDIN </b></li>
                                         <li><a href="ng.linkedin.com/in/okeniyi">{{data.linkedInLink}}</a></li>
                                     </ul>
                                 </li>
@@ -154,7 +155,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <h4>May 2016 - Present</h4>
                         </div>
                         <div class="col-md-6 work-right"> 
-                            <h5><span class="glyphicon glyphicon-briefcase"> </span> DATAINFOSEC CONSULT LTD.</h5>
+                            <h5><span class="glyphicon glyphicon-briefcase"> </span> DATAINFOSEC CONSULT LTD. Asaba</h5>
                             <p>As PROGRAMMER/TECHNICAL SUPPORT</p>
                             <p>Proficient use of Microsoft Excel to process, audit and format payrolls.
                                 Bulk Data Processing with Java, MYSQL and other technologies.
@@ -168,7 +169,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <h4>September 2015 – September 2016 </h4>
                         </div>
                         <div class="col-md-6 work-left work-left2"> 
-                            <h5> UREGISTA INC. <span class="glyphicon glyphicon-briefcase"> </span></h5>
+                            <h5> UREGISTA INC. <a href="https://goo.gl/maps/Cdw6NyLeDLQ2">Lagos</a> <span class="glyp>Abujahicon glyphicon-briefcase"> </span></h5>
                             <p>As JAVA DEVELOPER</p>
                             <p>Back end Programming for URegista product using Java SE & EE, MySQL Database.</p>
                         </div>
@@ -179,7 +180,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <h4>July 2015 – August 2015</h4>
                         </div>
                         <div class="col-md-6 work-right"> 
-                            <h5><span class="glyphicon glyphicon-briefcase"> </span> EXAMETRY LTD</h5>
+                            <h5><span class="glyphicon glyphicon-briefcase"> </span> EXAMETRY LTD Ibadan</h5>
                             <p>Research solutions to math’s and physics questions and use of Microsoft word to create illustrative diagrams.</p>
                         </div>
                         <div class="clearfix"> </div>
@@ -189,7 +190,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <h4>August 2013 – February 2014 </h4>
                         </div>
                         <div class="col-md-6 work-left work-left2"> 
-                            <h5> PHASE 3 TELECOM <span class="glyphicon glyphicon-briefcase"></span> </h5>
+                            <h5> PHASE 3 TELECOM <a href="https://goo.gl/maps/qmDkqRbSnAk">Abuja</a> <span class="glyphicon glyphicon-briefcase"></span> </h5>
                             <p>Monitoring of fibre optic cable network, Field maintenance and repair of fibre optic cable and documentation of faults and general office paper work.</p>
                         </div>
                         <div class="clearfix"> </div>
@@ -303,9 +304,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
                             <ul class="resp-tabs-list wow fadeInUp animated" data-wow-delay=".7s">
                                 <li class="resp-tab-item"><span>All</span></li>
-<!--                                <li class="resp-tab-item"><span>Websites</span></li>
-                                <li class="resp-tab-item"><span>Android</span></li>
-                                <li class="resp-tab-item"><span>Desktop</span></li>					-->
+                                <!--                                <li class="resp-tab-item"><span>Websites</span></li>
+                                                                <li class="resp-tab-item"><span>Android</span></li>
+                                                                <li class="resp-tab-item"><span>Desktop</span></li>					-->
                             </ul>	
                             <div class="clearfix"> </div>	
                             <div class="resp-tabs-container">
@@ -556,7 +557,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <!--footer-->
             <div class="footer">
                 <div class="container">
-                    <p>© 2016 My Resume. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+                    <p>© 2017 My Resume. All rights reserved | Design by Niyi Oke using <a href="http://w3layouts.com">W3layouts template</a></p>
                 </div>
             </div>
         </div>
@@ -577,7 +578,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <script>
             angular.module('MyCVApp', []).controller('Controller', function ($scope, $http, $window) {
                 var fetchProfile = function () {
-                    $http.get("http://localhost:8089/MyCV/v1/owner")
+                    $http.get("http://34.206.64.30:8080/MyCV/v1/owner")
                             .then(function successCallback(response) {
 //                                $window.location.href = 'http://localhost:8089/SabiRoad/login.html';
                                 console.log(response);

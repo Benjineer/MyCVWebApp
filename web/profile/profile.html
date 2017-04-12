@@ -123,7 +123,7 @@
                         }
                     });
                     console.log(data);
-                    $http.put("http://localhost:8089/MyCV/v1/owner", data, config)
+                    $http.put("http://34.206.64.30:8080/MyCV/v1/owner", data, config)
                             .then(function successCallback(response) {
                                 console.log(response);
                                 window.alert("Profile Successfully updated");
